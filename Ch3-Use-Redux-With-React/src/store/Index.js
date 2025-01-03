@@ -16,20 +16,13 @@ const counterReducer = (store = INITIAL_VALUE, action) => {
     return newStore;
   }
   else if (action.type == "TOGGLE_PRIVACY") {
-    // console.log(!store.privacy)
+
 return { ...store,privacy : !store.privacy}
 }
   return newStore;
 };
-
 const counterStore = createStore(counterReducer);
 
-// const subscriber = () =>{
-//  const state = counterStore.getState();
-//  console.log(state)
-// }
 
-// counterStore.subscribe(subscriber);
-// counterStore.dispatch({type : 'INCREMENT'});
 
 export default counterStore;
