@@ -1,29 +1,32 @@
 import { useRef } from "react";
 import { useDispatch } from "react-redux";
+import { counterActions } from "../store/Index";
 
 function Controls() {
   const inputValue = useRef();
   const dispatch = useDispatch();
 
-  const handleIncrement = () => { dispatch({ type: "INCREMENT" }); };
-  const handleDecrement = () => { dispatch({ type: "DECREMENT" });};
+  const handleIncrement = () => {
+    dispatch(counterActions.increment());
+  };
+  const handleDecrement = () => {
+    dispatch(counterActions.decrement());
+  };
 
   const handleAdd = () => {
-    dispatch({
-      type: "ADD",
-      payload: {
-        num: inputValue.current.value,
-      },
-    });
-    inputValue.current.value = "";
+    dispatch(
+      counterActions.add(
+        inputValue.current.value,
+      )
+    );
+    inputValue.current.value = " ";
   };
   const handleSubtract = () => {
-    dispatch({
-      type: "SUBTRACT",
-      payload: {
-        num: inputValue.current.value,
-      },
-    });
+    dispatch(
+      counterActions.subtract(
+        inputValue.current.value,
+      )
+    );
     inputValue.current.value = "";
   };
 
@@ -58,8 +61,13 @@ function Controls() {
       </div>
 
       <div className="d-grid gap-2 d-sm-flex justify-content-sm-center control-row">
-        <input type="text" ref={inputValue}  placeholder="Enter a number" required/>
-        <button className="btn btn-info"  type="button" onClick={handleAdd}>
+        <input
+          type="text"
+          ref={inputValue}
+          placeholder="Enter a number"
+          required
+        />
+        <button className="btn btn-info" type="button" onClick={handleAdd}>
           Add
         </button>
         <button
