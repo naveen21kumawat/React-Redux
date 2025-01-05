@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { useDispatch } from "react-redux";
-import { counterActions } from "../store/Index";
-
+import { privacyActions } from "../store/Privacy";
+import { counterActions } from "../store/Counter";
 function Controls() {
   const inputValue = useRef();
   const dispatch = useDispatch();
@@ -14,24 +14,17 @@ function Controls() {
   };
 
   const handleAdd = () => {
-    dispatch(
-      counterActions.add(
-        inputValue.current.value,
-      )
-    );
+    dispatch(counterActions.add(inputValue.current.value));
     inputValue.current.value = " ";
   };
   const handleSubtract = () => {
-    dispatch(
-      counterActions.subtract(
-        inputValue.current.value,
-      )
-    );
+    dispatch(counterActions.subtract(inputValue.current.value));
     inputValue.current.value = "";
   };
 
   const handlePrivacyToggle = () => {
-    dispatch({ type: "TOGGLE_PRIVACY" });
+    console.log("Privacy Called");
+    dispatch(privacyActions.toggle(inputValue.current.value));
   };
 
   return (
