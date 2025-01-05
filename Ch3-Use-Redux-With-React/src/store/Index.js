@@ -9,5 +9,4 @@ const counterStore = configureStore({
     privacy: privacySlice.reducer,
   },
 });
-
 export default counterStore;
