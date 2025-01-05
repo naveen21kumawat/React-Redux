@@ -12,4 +12,5 @@ function DisplayCounter() {
   );
 }
 
+
 export default DisplayCounter;

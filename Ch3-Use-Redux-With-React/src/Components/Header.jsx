@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 function Header() {
   return (
     <>
-        <h1 className="display-5 fw-bold text-body-emphasis">Centered hero</h1>
+        <h1 className="display-5 fw-bold text-body-emphasis">Counter</h1>
      
     </>
   );

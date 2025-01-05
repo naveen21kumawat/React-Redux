@@ -5,6 +5,7 @@ import privacySlice from "./Privacy";
 
 const counterStore = configureStore({
   reducer: {
+    
     counter: counterSlice.reducer,
     privacy: privacySlice.reducer,
   },

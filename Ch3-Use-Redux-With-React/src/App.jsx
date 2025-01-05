@@ -7,7 +7,7 @@ import Header from "./Components/Header";
 import PrivacyMessage from "./Components/PrivacyMessage";
 
 function App() {
-  const privacy = useSelector((store) => store.privacy)
+  const privacy = useSelector((store) => store.privacy);
   return (
     <>
       <div className="px-4 py-5 my-5 text-center">
@@ -15,9 +15,8 @@ function App() {
           <Header />
 
           <div className="col-lg-6 mx-auto">
-            {privacy ? <PrivacyMessage/> :   <DisplayCounter />}
-          
-            <Controls/>
+            {privacy ? <PrivacyMessage /> : <DisplayCounter />}
+            <Controls />
           </div>
         </Container>
       </div>

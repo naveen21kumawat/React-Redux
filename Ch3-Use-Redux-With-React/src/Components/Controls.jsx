@@ -17,6 +17,7 @@ function Controls() {
     dispatch(counterActions.add(inputValue.current.value));
     inputValue.current.value = " ";
   };
+  
   const handleSubtract = () => {
     dispatch(counterActions.subtract(inputValue.current.value));
     inputValue.current.value = "";
